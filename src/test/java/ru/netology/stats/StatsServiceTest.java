@@ -7,62 +7,60 @@ import static org.junit.jupiter.api.Assertions.*;
 class StatsServiceTest {
 
     @Test
-    void salesNumberSum() {
-        StatsService StatsService = new StatsService();
-        int[] salesNumbers = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int actual = StatsService.salesNumberSum(salesNumbers);
+    void salesNumberSum (){
+        StatsService service = new StatsService();
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 180;
-
-        assertEquals(expected,actual);
-
+        long actual = service.salesNumberSum(sales);
+        assertEquals(expected ,actual);
     }
 
     @Test
-    void averageSalesSum() {
-        StatsService StatsService = new StatsService();
-        int[] salesNumbers = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int actual = StatsService.averageSalesSum(salesNumbers);
+    void averageSalesSum(){
+        StatsService service = new StatsService();
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 15;
+        long actual = service.averageSalesSum(sales);
+        assertEquals(expected ,actual);
+    }
+
+    @Test
+    void minSalesNumber() {
+        StatsService service = new StatsService();
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expected = 9;
+
+        long actual = service.minSalesNumber(sales);
 
         assertEquals(expected, actual);
-
     }
 
     @Test
     void maxSalesNumber() {
-        StatsService StatsService = new StatsService();
-        int[] salesNumbers = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int actual = StatsService.maxSalesNumber(salesNumbers);
+        StatsService service = new StatsService();
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 8;
 
-        assertEquals(expected, actual);
-    }
-    @Test
-    void minSalesNumber() {
-        StatsService StatsService = new StatsService();
-        int[] salesNumbers = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int actual = StatsService.minSalesNumber(salesNumbers);
-        int expected = 9;
+        long actual = service.maxSalesNumber(sales);
 
         assertEquals(expected, actual);
     }
 
     @Test
-    void lessThenAverageMonth() {
-        StatsService StatsService = new StatsService();
-        int[] salesNumbers = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int actual = StatsService.lessThenAverageMonthSales(salesNumbers);
-        int expected = 7;
-
-        assertEquals(expected, actual);
+    void moreThenAverageMonthSales(){
+        StatsService service = new StatsService();
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expected = 5;
+        long actual = service.moreThenAverageMonthSales(sales);
+        assertEquals(expected ,actual);
     }
-    @Test
-    void moreThenAverageMonth() {
-        StatsService StatsService = new StatsService();
-        int[] salesNumbers = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int actual = StatsService.moreThenAverageMonthSales(salesNumbers);
-        int expected = 7;
 
+    @Test
+    void lessThenAverageMonthSales() {
+        StatsService service = new StatsService();
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int expected = 5;
+        long actual = service.lessThenAverageMonthSales(sales);
         assertEquals(expected, actual);
     }
 }
